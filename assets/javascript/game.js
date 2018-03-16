@@ -47,6 +47,34 @@ $(document).ready(function () {
 		update();
 
 	});
+	$(document).keyup(function(evt) {
+		switch (evt.key) {
+			case ('a'): 
+				obj.add('crystal1');
+				break;
+			case('s'):
+				obj.add('crystal2');
+				break;
+			case('d'):
+				obj.add('crystal3');
+				break;
+			case('f'):
+				obj.add('crystal4');
+				break;
+		}
+		if(obj.over()) {
+			if(obj.over() == 'win') {
+				wins++;
+			}
+			else {
+				losses++;
+			}
+			obj = new Game();
+		}
+		update();
+		
+	});
+
 });
 
 function update() {
